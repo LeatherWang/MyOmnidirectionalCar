@@ -31,7 +31,7 @@ void uart3_init(u32 pclk2,u32 bound)
  	USART3->BRR=mantissa; // 波特率设置	 
 	USART3->CR1|=0X200C;  //1位停止,无校验位.
 	//使能接收中断
-	USART3->CR1|=1<<8;    //PE中断使能
+	//USART3->CR1|=1<<8;    //PE中断使能
 	USART3->CR1|=1<<5;    //接收缓冲区非空中断使能	    	
 	MY_NVIC_Init(0,0,USART3_IRQn,2);//组2，最低优先级 
 }
@@ -43,8 +43,20 @@ void uart3_init(u32 pclk2,u32 bound)
 **************************************************************************/
 static u8 RxState = 0;
 static u8 RxBuffer[256];
+u8 TxBuffer3[256];
+u8 TxCounter3=0;
+u8 count3=0;
+
 int USART3_IRQHandler(void)
 {	
+	if((USART3->SR & (1<<7))&&(USART3->CR1 & USART_CR1_TXEIE))
+	{
+		USART3->DR = TxBuffer3[TxCounter3++]; //写DR清除中断标志
+		if(TxCounter3 == count3)
+		{
+			USART3->CR1 &= ~USART_CR1_TXEIE;		//关闭TXE中断
+		}
+	}
 	if(USART3->SR&(1<<5))//接收到数据
 	{	
 		u8 com_data=USART3->DR;
@@ -88,7 +100,7 @@ int USART3_IRQHandler(void)
 			RxState = 0;
 	}  	
 return 0;	
-} 
+}
 
 void ANO_DT_Data_Receive_Anl(u8 *data_buf,u8 num)
 {
@@ -100,10 +112,20 @@ void ANO_DT_Data_Receive_Anl(u8 *data_buf,u8 num)
 
 	if(*(data_buf+2)==0X01)								
   {
-     RCX_Position = ( ((vs16)(*(data_buf+4)<<8)|*(data_buf+5))  -350)*20;
+     RCX_Position = ( ((vs16)(*(data_buf+4)<<8)|*(data_buf+5))  -350)*20;//接收上位机指令->计算位置
      RCY_Position = ( ((vs16)(*(data_buf+6)<<8)|*(data_buf+7))  -350)*20;
     // RCZ_Position = ( (vs16)(*(data_buf+8)<<8)|*(data_buf+9) );
   }
+}
+
+void ANO_UART3_Put_Buf(unsigned char *DataToSend , u8 data_num)
+{
+	u8 i;
+	for(i=0;i<data_num;i++)
+		TxBuffer3[count3++] = *(DataToSend+i);
+	if(!(USART3->CR1 & USART_CR1_TXEIE))
+		//USART_ITConfig(USART3, USART_IT_TXE, ENABLE);  //打开USART3发送中断使能
+		USART3->CR1 |= USART_CR1_TXEIE;
 }
 
 /**************************************************************************

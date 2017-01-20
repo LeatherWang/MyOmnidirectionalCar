@@ -10,5 +10,6 @@ u8 Left_RC (int time);
 u8 Right_RC (int time);
 
 void ANO_DT_Data_Receive_Anl(u8 *data_buf,u8 num);
+void ANO_UART3_Put_Buf(unsigned char *DataToSend , u8 data_num);
 #endif
 

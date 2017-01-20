@@ -124,24 +124,46 @@ void oled_show(void)
 返回  值：无
 作    者：平衡小车之家
 **************************************************************************/
+typedef union
+{
+    unsigned int sum;//int = qint32
+    u8 son[2];
+} MyUnion;
+MyUnion Union_dataBuf;
+u8 data_to_send[50];				//发送数据缓冲区
+unsigned int Position_X,Position_Y;
+#define A_PARAMETER 0.5
+#define B_PARAMETER (2/sqrt(3.0))
+
 void APP_Show(void)
-{    
-	  int app_2,app_3,app_4;
-	  app_4=(Voltage-1110)*2/3;	
-  	if(app_4<0)app_4=1;
-	  if(app_4==0)app_4=31;
-	  if(app_4>100)app_4=100;   //对电压数据进行处理
-	  if(Run_Flag==0)
-		{		
-			app_2=Move_X*0.7; if(app_2<0)app_2=-app_2;			                   //对编码器数据就行数据处理便于图形化
-			app_3=Move_Y*0.7;  if(app_3<0)app_3=-app_3;
-			printf("Z%d:%d:%d:%dL$",(u8)app_2,(u8)app_3,(u8)app_4,(int)Move_Z);//打印到APP上面
-		}
-		else
-		{
-			
-			printf("Z%d:%d:%d:%dL$",0,0,(u8)app_4,0);//打印到APP上面
-		}
+{   
+		u8 _cnt=0;
+    u8 i=0;
+    u8 sum = 0;
+		Position_X = (unsigned int)(Position_A/20.0f+350);//运动学建模->反解
+    Position_Y = (unsigned int)(((A_PARAMETER*Position_A + Position_B)*B_PARAMETER)/20.0 +350);
+
+    data_to_send[_cnt++]=0xAA;
+    data_to_send[_cnt++]=0xAF;
+    data_to_send[_cnt++]=0x01;//flag
+    data_to_send[_cnt++]=0;
+	
+		Union_dataBuf.sum = Position_X;
+    data_to_send[_cnt++]=Union_dataBuf.son[1];
+    data_to_send[_cnt++]=Union_dataBuf.son[0];
+	
+		Union_dataBuf.sum = Position_Y;
+    data_to_send[_cnt++]=Union_dataBuf.son[1];
+    data_to_send[_cnt++]=Union_dataBuf.son[0];
+
+    data_to_send[3] = _cnt-4;
+
+     for(i=0;i<_cnt;i++)
+        sum += data_to_send[i];
+
+    data_to_send[_cnt++]=sum;
+		
+		ANO_UART3_Put_Buf(data_to_send, _cnt);
 }
 /**************************************************************************
 函数功能：虚拟示波器往上位机发送数据 关闭显示屏
@@ -153,7 +175,7 @@ void DataScope(void)
 {   
 	if(Run_Flag==0)
 	{
-		DataScope_Get_Channel_Data( Target_A, 1 );       //显示角度 单位：度（°）
+		DataScope_Get_Channel_Data(Target_A, 1 );       //显示角度 单位：度（°）
 		DataScope_Get_Channel_Data(Encoder_A, 2 );         //显示超声波测量的距离 单位：CM 
 		DataScope_Get_Channel_Data(Target_B, 3 );                 //显示电池电压 单位：V
   	DataScope_Get_Channel_Data(Encoder_B, 4 );     
@@ -162,7 +184,7 @@ void DataScope(void)
 	}
 else
 	{
-		DataScope_Get_Channel_Data( Target_A, 1 );       //显示角度 单位：度（°）
+		DataScope_Get_Channel_Data(Target_A, 1 );       //显示角度 单位：度（°）
 		DataScope_Get_Channel_Data(Position_A, 2 );         //显示超声波测量的距离 单位：CM 
 		DataScope_Get_Channel_Data(Target_B, 3 );                 //显示电池电压 单位：V
   	DataScope_Get_Channel_Data(Position_B, 4 );     

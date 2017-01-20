@@ -47,18 +47,20 @@ int EXTI9_5_IRQHandler(void)
 	 if(PBin(5)==0)		
 	{     
 		  EXTI->PR=1<<5;                                                      //清除LINE5上的中断标志位  		
-		   Flag_Target=!Flag_Target;
+		 
+  		Flag_Target=!Flag_Target;
 		  if(delay_flag==1)
 			 {
 				 if(++delay_50==10)	 delay_50=0,delay_flag=0;                     //给主函数提供50ms的精准延时
 			 }
 		  if(Flag_Target==1)                                                  //5ms读取一次陀螺仪和加速度计的值
-			{
-			 CAN1_SEND();                                                          //CAN发送
+			{                                                        //CAN发送
 			if(Usart_Flag==0&&Usart_ON_Flag==1)  memcpy(rxbuf,Urxbuf,8*sizeof(u8));	//如果解锁了串口控制标志位，进入串口控制模式
 			Read_DMP();                                                           //===更新姿态	
 			return 0;	                                               
-			}                                                                   //===10ms控制一次，为了保证M法测速的时间基准，首先读取编码器数据
+			}   
+			
+			//===10ms控制一次，为了保证M法测速的时间基准，首先读取编码器数据
 			Encoder_A=Read_Encoder(2);                                          //===读取编码器的值
 			Position_A+=Encoder_A;                                              //===积分得到速度   
 			Encoder_B=Read_Encoder(3);                                          //===读取编码器的值
@@ -68,22 +70,12 @@ int EXTI9_5_IRQHandler(void)
 	  	Read_DMP();                                                         //===更新姿态	
   		Led_Flash(100);                                                     //===LED闪烁;常规模式 1s改变一次指示灯的状态	
 
-			Voltage_All+=Get_battery_volt();                                    //多次采样累积
-			if(++Voltage_Count==100) Voltage=Voltage_All/100,Voltage_All=0,Voltage_Count=0;//求平均值 获取电池电压	       
-
-     if(Run_Flag==0)//速度模式
-		{		
-		  if(CAN_ON_Flag==0&&Usart_ON_Flag==0)  Get_RC(Run_Flag);                //===串口和CAN控制都未使能，则接收蓝牙遥控指令
-			Motor_A=Incremental_PI_A(Encoder_A,Target_A);                         //===速度闭环控制计算电机A最终PWM
-			Motor_B=Incremental_PI_B(Encoder_B,Target_B);                         //===速度闭环控制计算电机B最终PWM
-			Motor_C=Incremental_PI_C(Encoder_C,Target_C);                         //===速度闭环控制计算电机C最终PWM
-		}
-     else//位置模式
-		{
-		if(CAN_ON_Flag==0&&Usart_ON_Flag==0) //===串口和CAN控制都未使能，则接收蓝牙遥控指令
-		 {	    
-			Get_RC(Run_Flag);
-		 }
+     if(Run_Flag==1)//Run_Flag=1->位置模式 , Run_Flag=0->速度模式
+		 {
+			if(CAN_ON_Flag==0&&Usart_ON_Flag==0) //===串口和CAN控制都未使能，则接收蓝牙遥控指令
+			 {	    
+				Get_RC(Run_Flag);
+			 }
 			Motor_A=Position_PID_A(Position_A,Target_A);//位置闭环控制，计算电机A速度内环的输入量
 			Motor_B=Position_PID_B(Position_B,Target_B);//位置闭环控制，计算电机B速度内环的输入量
 			Motor_C=Position_PID_C(Position_C,Target_C);//位置闭环控制，计算电机C速度内环的输入量
@@ -95,23 +87,15 @@ int EXTI9_5_IRQHandler(void)
 			Motor_B=Incremental_PI_B(Encoder_B,-Motor_B);         //===速度闭环控制计算电机B最终PWM
 			Motor_C=Incremental_PI_C(Encoder_C,-Motor_C);         //===速度闭环控制计算电机C最终PWM
 		}
-     
+		 
+     Voltage_All+=Get_battery_volt();                                    //多次采样累积
+		 if(++Voltage_Count==100) Voltage=Voltage_All/100,Voltage_All=0,Voltage_Count=0;//求平均值 获取电池电压	  
 		 if(Turn_Off(Voltage)==0)               //===如果电池电压不存在异常---LeatherWang
 		 {
 			 Xianfu_Pwm(6900);                     //===PWM限幅
 			 Set_Pwm(Motor_A,Motor_B,Motor_C);     //===赋值给PWM寄存器  
 		 }
-			Key();	                             //扫描按键状态	---没用到？	--LeatherWang
-			for(j=0;j<=7;j++) //用于解锁CAN控制的起始语句
-		{
-			if(j==7)
-			{	
-				RC_Velocity=rxbuf[j];  
-				break;
-			}
-			if(rxbuf[j]!=Velocity_rxbuf[j]) //判断收到的CAN指令是否为起始或停止指令。
-			break;
-		}				 
+			Key();	                             //扫描按键状态	---检测是数据是发向oled还是上位机	--LeatherWang		 
  }
 	 return 0;	 
 } 
@@ -356,7 +340,6 @@ void Count_Velocity(void)
 	Last_Target_X=Move_X;   //保存X轴上一次的位置信息，便于调用
 	Last_Target_Y=Move_Y;   //保存Y轴上一次的位置信息，便于调用
 	Last_Target_Z=Move_Z;   //保存Z轴上一次的位置信息，便于调用
-
 }
 /**************************************************************************
 函数功能：接收CAN或者串口控制指令进行处理

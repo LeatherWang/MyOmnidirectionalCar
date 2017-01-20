@@ -20,6 +20,7 @@ u8 txbuf[8],txbuf2[8];                       //CAN发送相关变量
 float Pitch,Roll,Yaw,Move_X,Move_Y,Move_Z;   //三轴角度和XYZ轴目标速度
 int main(void)
 { 
+	u8 sendCount=0;
 	Stm32_Clock_Init(9);            //=====系统时钟设置
 	delay_init(72);                 //=====延时初始化
 	JTAG_Set(JTAG_SWD_DISABLE);     //=====关闭JTAG接口
@@ -46,7 +47,12 @@ int main(void)
 			BUZZER=0;                 //关闭蜂鸣器
 	    if(Flag_Show==0)          //使用MiniBalanceV3.5 APP和OLED显示屏
 			{
-				//APP_Show();	
+				sendCount++;
+				if(sendCount == 4)
+				{
+					APP_Show();	
+					sendCount = 0;
+				}
 				oled_show();          //===显示屏打开
 	    }
     	else                      //使用MiniBalanceV3.5上位机 上位机使用的时候需要严格的时序，故此时关闭app监控部分和OLED显示屏

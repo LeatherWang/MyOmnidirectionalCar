@@ -1,6 +1,6 @@
 Dependencies for Project 'Minibalance', Target 'Target 1': (DO NOT MODIFY !)
 F (.\startup_stm32f10x_md.s)(0x532BB228)(--cpu Cortex-M3 -g --apcs=interwork -I D:\promile\keil5\ARM\RV31\INC-I D:\promile\keil5\ARM\CMSIS\Include-I D:\promile\keil5\ARM\Inc\ST\STM32F10x--pd "__UVISION_VERSION SETA 520"--list ..\obj\startup_stm32f10x_md.lst --xref -o ..\obj\startup_stm32f10x_md.o --depend ..\obj\startup_stm32f10x_md.d)
-F (.\Minibalance.c)(0x587F68DD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\OLED -I ..\HARDWARE\ADC -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\BALANCE\CONTROL -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\BALANCE\CONTROL -I ..\BALANCE\DMP -I ..\BALANCE\filter -I ..\BALANCE\MPU6050 -I ..\BALANCE\show -I ..\BALANCE\controls -I ..\HARDWARE\USART3 -I ..\HARDWARE\EXTI -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\CAN-I D:\promile\keil5\ARM\RV31\INC-I D:\promile\keil5\ARM\CMSIS\Include-I D:\promile\keil5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD-o ..\obj\minibalance.o --omf_browse ..\obj\minibalance.crf --depend ..\obj\minibalance.d)
+F (.\Minibalance.c)(0x58820059)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\OLED -I ..\HARDWARE\ADC -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\BALANCE\CONTROL -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\BALANCE\CONTROL -I ..\BALANCE\DMP -I ..\BALANCE\filter -I ..\BALANCE\MPU6050 -I ..\BALANCE\show -I ..\BALANCE\controls -I ..\HARDWARE\USART3 -I ..\HARDWARE\EXTI -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\CAN-I D:\promile\keil5\ARM\RV31\INC-I D:\promile\keil5\ARM\CMSIS\Include-I D:\promile\keil5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD-o ..\obj\minibalance.o --omf_browse ..\obj\minibalance.crf --depend ..\obj\minibalance.d)
 I (..\SYSTEM\sys\sys.h)(0x587F3DA3)
 I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
 I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
@@ -12,7 +12,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -42,7 +42,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -72,7 +72,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -101,7 +101,7 @@ I (..\SYSTEM\delay\delay.h)(0x5584D9A5)
 I (..\HARDWARE\LED\led.h)(0x58620D32)
 I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -132,7 +132,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -162,7 +162,7 @@ I (..\HARDWARE\LED\led.h)(0x58620D32)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -192,7 +192,7 @@ I (..\HARDWARE\LED\led.h)(0x58620D32)
 I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -224,7 +224,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
 I (..\HARDWARE\ENCODER\encoder.h)(0x5858A3FB)
@@ -254,7 +254,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\ENCODER\encoder.h)(0x5858A3FB)
@@ -284,7 +284,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -314,7 +314,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -331,8 +331,8 @@ I (..\BALANCE\DMP\dmpmap.h)(0x50CA9A0C)
 I (D:\promile\keil5\ARM\ARMCC\include\string.h)(0x56FE42DE)
 I (D:\promile\keil5\ARM\ARMCC\include\stdlib.h)(0x56FE42DE)
 I (D:\promile\keil5\ARM\ARMCC\include\math.h)(0x56FE42D6)
-F (..\HARDWARE\USART3\usart3.c)(0x587F6731)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\OLED -I ..\HARDWARE\ADC -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\BALANCE\CONTROL -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\BALANCE\CONTROL -I ..\BALANCE\DMP -I ..\BALANCE\filter -I ..\BALANCE\MPU6050 -I ..\BALANCE\show -I ..\BALANCE\controls -I ..\HARDWARE\USART3 -I ..\HARDWARE\EXTI -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\CAN-I D:\promile\keil5\ARM\RV31\INC-I D:\promile\keil5\ARM\CMSIS\Include-I D:\promile\keil5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD-o ..\obj\usart3.o --omf_browse ..\obj\usart3.crf --depend ..\obj\usart3.d)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+F (..\HARDWARE\USART3\usart3.c)(0x5881C21A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\OLED -I ..\HARDWARE\ADC -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\BALANCE\CONTROL -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\BALANCE\CONTROL -I ..\BALANCE\DMP -I ..\BALANCE\filter -I ..\BALANCE\MPU6050 -I ..\BALANCE\show -I ..\BALANCE\controls -I ..\HARDWARE\USART3 -I ..\HARDWARE\EXTI -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\CAN-I D:\promile\keil5\ARM\RV31\INC-I D:\promile\keil5\ARM\CMSIS\Include-I D:\promile\keil5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD-o ..\obj\usart3.o --omf_browse ..\obj\usart3.crf --depend ..\obj\usart3.d)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\SYSTEM\sys\sys.h)(0x587F3DA3)
 I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
 I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
@@ -374,7 +374,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -404,7 +404,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -421,7 +421,7 @@ I (..\BALANCE\DMP\dmpmap.h)(0x50CA9A0C)
 I (D:\promile\keil5\ARM\ARMCC\include\string.h)(0x56FE42DE)
 I (D:\promile\keil5\ARM\ARMCC\include\stdlib.h)(0x56FE42DE)
 I (D:\promile\keil5\ARM\ARMCC\include\math.h)(0x56FE42D6)
-F (..\BALANCE\CONTROL\control.c)(0x587F6760)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\OLED -I ..\HARDWARE\ADC -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\BALANCE\CONTROL -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\BALANCE\CONTROL -I ..\BALANCE\DMP -I ..\BALANCE\filter -I ..\BALANCE\MPU6050 -I ..\BALANCE\show -I ..\BALANCE\controls -I ..\HARDWARE\USART3 -I ..\HARDWARE\EXTI -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\CAN-I D:\promile\keil5\ARM\RV31\INC-I D:\promile\keil5\ARM\CMSIS\Include-I D:\promile\keil5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD-o ..\obj\control.o --omf_browse ..\obj\control.crf --depend ..\obj\control.d)
+F (..\BALANCE\CONTROL\control.c)(0x5881B999)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\OLED -I ..\HARDWARE\ADC -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\BALANCE\CONTROL -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\BALANCE\CONTROL -I ..\BALANCE\DMP -I ..\BALANCE\filter -I ..\BALANCE\MPU6050 -I ..\BALANCE\show -I ..\BALANCE\controls -I ..\HARDWARE\USART3 -I ..\HARDWARE\EXTI -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\CAN-I D:\promile\keil5\ARM\RV31\INC-I D:\promile\keil5\ARM\CMSIS\Include-I D:\promile\keil5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD-o ..\obj\control.o --omf_browse ..\obj\control.crf --depend ..\obj\control.d)
 I (..\BALANCE\CONTROL\control.h)(0x586DBC25)
 I (..\SYSTEM\sys\sys.h)(0x587F3DA3)
 I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
@@ -434,7 +434,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -465,7 +465,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -495,7 +495,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -528,7 +528,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
@@ -545,7 +545,7 @@ I (..\BALANCE\DMP\dmpmap.h)(0x50CA9A0C)
 I (D:\promile\keil5\ARM\ARMCC\include\string.h)(0x56FE42DE)
 I (D:\promile\keil5\ARM\ARMCC\include\stdlib.h)(0x56FE42DE)
 I (D:\promile\keil5\ARM\ARMCC\include\math.h)(0x56FE42D6)
-F (..\BALANCE\show\show.c)(0x587F0FC8)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\OLED -I ..\HARDWARE\ADC -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\BALANCE\CONTROL -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\BALANCE\CONTROL -I ..\BALANCE\DMP -I ..\BALANCE\filter -I ..\BALANCE\MPU6050 -I ..\BALANCE\show -I ..\BALANCE\controls -I ..\HARDWARE\USART3 -I ..\HARDWARE\EXTI -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\CAN-I D:\promile\keil5\ARM\RV31\INC-I D:\promile\keil5\ARM\CMSIS\Include-I D:\promile\keil5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD-o ..\obj\show.o --omf_browse ..\obj\show.crf --depend ..\obj\show.d)
+F (..\BALANCE\show\show.c)(0x5881FB8F)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\OLED -I ..\HARDWARE\ADC -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\BALANCE\CONTROL -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\BALANCE\CONTROL -I ..\BALANCE\DMP -I ..\BALANCE\filter -I ..\BALANCE\MPU6050 -I ..\BALANCE\show -I ..\BALANCE\controls -I ..\HARDWARE\USART3 -I ..\HARDWARE\EXTI -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\CAN-I D:\promile\keil5\ARM\RV31\INC-I D:\promile\keil5\ARM\CMSIS\Include-I D:\promile\keil5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD-o ..\obj\show.o --omf_browse ..\obj\show.crf --depend ..\obj\show.d)
 I (..\BALANCE\show\show.h)(0x568CB59F)
 I (..\SYSTEM\sys\sys.h)(0x587F3DA3)
 I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
@@ -558,7 +558,7 @@ I (..\HARDWARE\KEY\key.h)(0x586F4528)
 I (..\HARDWARE\OLED\oled.h)(0x5638059E)
 I (..\SYSTEM\usart\usart.h)(0x5863618F)
 I (D:\promile\keil5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\HARDWARE\USART3\usart3.h)(0x587F41E0)
+I (..\HARDWARE\USART3\usart3.h)(0x5881C1CC)
 I (..\HARDWARE\ADC\adc.h)(0x5858B59C)
 I (..\HARDWARE\TIMER\timer.h)(0x5663E1AB)
 I (..\HARDWARE\MOTOR\motor.h)(0x586206EC)
